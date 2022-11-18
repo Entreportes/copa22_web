@@ -21,7 +21,7 @@ export default function Home(props: HomeProps) {
     event.preventDefault()
 
     try{
-      const response = await api.post('/pools', {
+      const response = await api.post('/polls', {
         title: poolTitle,
       });
 
@@ -42,10 +42,10 @@ export default function Home(props: HomeProps) {
 
 
   return (
-    <div className='max-w-[1124px] h-screen mx-auto grid grid-cols-2 items-center gap-28'>
-      <main>
+    <div className='max-w-[1124px] h-screen mx-auto grid md:grid-cols-2 items-center gap-28 grid-cols-1'>
+      <main className='px-8'>
         <Image src={logoImg} alt="Copa 22"/>
-        <h1 className='mt-4 text-white text-5xl font-bold leading-tight'>
+        <h1 className='mt-4 text-white md:text-5xl font-bold leading-tight text-4xl'>
           Crie seu próprio bolão da copa e compartilhe entre os amigos!
         </h1>
 
@@ -72,8 +72,11 @@ export default function Home(props: HomeProps) {
         <p className='text-gray-300 mt-4 text-sm leading-relaxed'>
           Após criar seu bolão, você receberá um código único que poderá usar para convidar outras pessoas
         </p>
+        <a href='https://play.google.com/store/' className='text-green-500 mt-4 text-sm'>
+          Faça do download do app Copa22 na PlayStore
+        </a>
 
-        <div className='mt-8 pt-8 border-t border-gray-600 grid grid-cols-2 justify-between text-gray-100'>
+        <div className='mt-5 pt-8 border-t border-gray-600 grid grid-cols-2 justify-between text-gray-100'>
           <div className='flex justify-start gap-6'>
             <Image src={iconCheckImg} alt=""/>
             <div className='flex flex-col'>
@@ -97,6 +100,7 @@ export default function Home(props: HomeProps) {
         alt="Dois celulares mostrando o preview do aplicativo"
         quality={100}
       />
+      
     </div>
   )
 }
@@ -107,7 +111,7 @@ export const getServerSideProps = async () => {
   
   
   const [poolCountResponse, guessCountResponse, userCountResponse] = await Promise.all([
-    api.get('pools/count'),
+    api.get('polls/count'),
     api.get('guesses/count'),
     api.get('users/count')
   ])
