@@ -21,7 +21,7 @@ export default function Home(props: HomeProps) {
     event.preventDefault()
 
     try{
-      const response = await api.post('/polls', {
+      const response = await api.post('/pools', {
         title: poolTitle,
       });
 
@@ -95,11 +95,20 @@ export default function Home(props: HomeProps) {
       
       </main>
 
-      <Image 
-        src= {appPreviewImg}
-        alt="Dois celulares mostrando o preview do aplicativo"
-        quality={100}
-      />
+      <div className='px-8 mt-10'>
+        <Image 
+          src= {appPreviewImg}
+          alt="Dois celulares mostrando o preview do aplicativo"
+          quality={100}
+          
+        />
+        <span className='text-gray-100 font-bold text-xl'>Política de privacidade</span>
+        <p className='text-gray-300 mt-4 text-sm leading-relaxed'>
+          Serão coletas apenas as informações de NOME, E-MAIL, ID do Google e FOTO DO PERFIL na conta Google.
+          Serão armezanados em nosso servidor apenas as informações disponibilizadas pelo login social 
+          nenhuma informação será compartilhada. Essas informações são essenciais para saber quem é o usuário que estará dando os palpites.
+        </p>
+      </div>
       
     </div>
   )
@@ -111,7 +120,7 @@ export const getServerSideProps = async () => {
   
   
   const [poolCountResponse, guessCountResponse, userCountResponse] = await Promise.all([
-    api.get('polls/count'),
+    api.get('pools/count'),
     api.get('guesses/count'),
     api.get('users/count')
   ])
