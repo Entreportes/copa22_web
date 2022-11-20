@@ -122,27 +122,27 @@ export const getServerSideProps = async () => {
   let poolCount
   let guessCount
   let userCount
-  try{
-    // console.log(api.request)
-    // const [poolCountResponse, guessCountResponse, userCountResponse] = await Promise.all([
-    //   api.get('pools/count'),
-    //   api.get('guesses/count'),
-    //   api.get('users/count')
-    // ])
-    // poolCount = poolCountResponse.data.count
-    // guessCount = guessCountResponse.data.count
-    // userCount = userCountResponse.data.count
+  // try{
+  //   console.log(api.request)
+  //   const [poolCountResponse, guessCountResponse, userCountResponse] = await Promise.all([
+  //     api.get('pools/count'),
+  //     api.get('guesses/count'),
+  //     api.get('users/count')
+  //   ])
+  //   poolCount = poolCountResponse.data.count
+  //   guessCount = guessCountResponse.data.count
+  //   userCount = userCountResponse.data.count
       
     
     
-  }catch(error){
-    console.log(error)
+  // }catch(error){
+  //   console.log(error)
     poolCount= 20
     guessCount= 350
     userCount= 90
-    throw (error)
+  //   throw (error)
       
-  } finally{
+  // } finally{
     return{
       props: {
         poolCount,
@@ -150,7 +150,7 @@ export const getServerSideProps = async () => {
         userCount,
       }
     }
-  }
+  // }
   
 
 }
