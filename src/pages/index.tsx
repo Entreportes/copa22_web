@@ -35,6 +35,7 @@ export default function Home(props: HomeProps) {
     } catch(error){
       console.log(error)
       alert('Falha ao criar o bolão, tente novamente.')
+      throw(error)
     }
 
 
@@ -118,29 +119,37 @@ export default function Home(props: HomeProps) {
 //VERFICAR getStaticProps
 export const getServerSideProps = async () => {
   
+  let poolCount
+  let guessCount
+  let userCount
   try{
+    console.log(api.request)
     const [poolCountResponse, guessCountResponse, userCountResponse] = await Promise.all([
       api.get('pools/count'),
       api.get('guesses/count'),
       api.get('users/count')
     ])
-    return {
-      props: {
-        poolCount: poolCountResponse.data.count,
-        guessCount: guessCountResponse.data.count,
-        userCount: userCountResponse.data.count,
-      }
-    }
+    poolCount = poolCountResponse.data.count
+    guessCount = guessCountResponse.data.count
+    userCount = userCountResponse.data.count
+      
+    
     
   }catch(error){
-      console.log(error)
-      return{
-        props: {
-          poolCount: 20,
-          guessCount: 350,
-          userCount: 90,
-        }
+    console.log(error)
+    poolCount= 20
+    guessCount= 350
+    userCount= 90
+    throw (error)
+      
+  } finally{
+    return{
+      props: {
+        poolCount,
+        guessCount,
+        userCount,
       }
+    }
   }
   
 
