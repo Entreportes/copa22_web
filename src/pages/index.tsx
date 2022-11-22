@@ -75,7 +75,8 @@ export default function Home(props: HomeProps) {
         </p>
         <div className='mt-4 text-sm text-gray-300'>
           <text>Faça o download do app </text>
-          <a href='https://play.google.com/store/apps/details?id=entreportes.copa22' className='text-green-500'>
+          //<a href='https://play.google.com/store/apps/details?id=entreportes.copa22' className='text-green-500'>
+          <a href='#' className='text-green-500'></a>
             Copa22 na PlayStore
           </a>
           <text> ou o </text>
