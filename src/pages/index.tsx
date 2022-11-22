@@ -119,8 +119,8 @@ export default function Home(props: HomeProps) {
           <span className='text-gray-100 font-bold text-xl mt-8'>Regras:
             <span className='text-gray-300 mt-1 ml-2 text-sm leading-relaxed text-justify'>
               <p> - Acertou o placar:          5 pontos</p>
-              <p> - Acertou time vencedor:     3 pontos</p>
-              <p> - Acertou o empate:          2 pontos</p>
+              <p> - Acertou o empate:          3 pontos</p>
+              <p> - Acertou time vencedor:     2 pontos</p>
               <p> - Acertou os gols de 1 time: +1 ponto</p>
             </span>
           </span>
