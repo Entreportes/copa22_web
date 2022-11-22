@@ -129,12 +129,12 @@ export default function Home(props: HomeProps) {
       <div className=' px-8 py-10'>
         <span className='text-gray-100 font-bold text-xl'>Política de privacidade</span>
         <p className='text-gray-300 mt-1 text-sm leading-relaxed text-justify'>
-          Serão coletas apenas as informações de NOME, E-MAIL, ID do Google e FOTO DO PERFIL na conta Google.
+          Serão coletas apenas as informações de nome, e-mail e foto do perfil da sua conta Google.
           Serão armezanados em nosso servidor apenas as informações disponibilizadas pelo login social 
           nenhuma informação será compartilhada. Essas informações são essenciais para saber quem é o usuário que estará dando os palpites.
         </p>
       </div>
-      <p className='text-gray-300 mt-1 text-sm leading-relaxed text-center'>E7 Soluções Integradas</p>
+      <p className='text-gray-600 mt-1 text-sm leading-relaxed text-center'>Ⓡ E7 Soluções Integradas</p>
     </div>
     
   )
