@@ -57,7 +57,7 @@ export default function Home(props: HomeProps) {
           </strong>
         </div>
 
-        <form onSubmit={createPool} className='mt-10 flex gap-2'>
+        <form onSubmit={createPool} className='mt-5 flex gap-2'>
           <input 
             className='flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-gray-100'
             type="text" 
@@ -73,9 +73,16 @@ export default function Home(props: HomeProps) {
         <p className='text-gray-300 mt-4 text-sm leading-relaxed'>
           Após criar seu bolão, você receberá um código único que poderá usar para convidar outras pessoas
         </p>
-        <a href='https://play.google.com/store/' className='text-green-500 mt-4 text-sm'>
-          Faça do download do app Copa22 na PlayStore
-        </a>
+        <div className='mt-4 text-sm text-gray-300'>
+          <text>Faça o download do app </text>
+          <a href='https://play.google.com/store/apps/details?id=entreportes.copa22' className='text-green-500'>
+            Copa22 na PlayStore
+          </a>
+          <text> ou o </text>
+          <a href='https://expo.dev/accounts/entreportes/projects/copa22/builds/1c440be4-2598-4a5c-9c66-9b456addc44c' className='text-green-500'>
+            executável .APK
+          </a>
+        </div>
 
         <div className='mt-5 pt-8 border-t border-gray-600 grid grid-cols-2 justify-between text-gray-100'>
           <div className='flex justify-start gap-6'>
@@ -104,7 +111,7 @@ export default function Home(props: HomeProps) {
           
         />
         <span className='text-gray-100 font-bold text-xl'>Política de privacidade</span>
-        <p className='text-gray-300 mt-4 text-sm leading-relaxed'>
+        <p className='text-gray-300 mt-1 text-sm leading-relaxed'>
           Serão coletas apenas as informações de NOME, E-MAIL, ID do Google e FOTO DO PERFIL na conta Google.
           Serão armezanados em nosso servidor apenas as informações disponibilizadas pelo login social 
           nenhuma informação será compartilhada. Essas informações são essenciais para saber quem é o usuário que estará dando os palpites.
